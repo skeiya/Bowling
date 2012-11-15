@@ -45,7 +45,6 @@ namespace Bowling.Application
             return ScoreService.CalcAt(_frames, index);
         }
 
-
         public bool IsFullAt(int i)
         {
             return FullFrameRule.IsFull(_frames[i]);
