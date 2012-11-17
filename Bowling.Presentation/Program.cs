@@ -16,65 +16,10 @@ namespace Bowling.Presentation
             Game game = new Game();
             while (!game.IsEnd())
             {
-                Roll(game);
-
-                WriteFrameNumber();
-                WriteRolls(game);
-                WriteScores(game);
+                ICommand c = CommandFactory.CraeteFromUserInput(game);
+                c.Exec();
             }
             Console.ReadKey();
-        }
-
-        private static void WriteScores(Game game)
-        {
-            StringBuilder buf = new StringBuilder();
-            for (int i = 0; i < FrameCountRule.GetCount(); i++)
-            {
-                if (!game.IsFullAt(i)) continue;
-                buf.AppendFormat("{0,4}", game.CalcScoreAt(i));
-            }
-            Console.WriteLine(buf);
-        }
-
-        private static void WriteRolls(Game game)
-        {
-            StringBuilder buf = new StringBuilder();
-            foreach (Frame f in game.GetFrames())
-            {
-                buf.Append(RollFormatter.GetRollsOfFrame(f));
-            }
-            Console.WriteLine(buf);
-        }
-
-        private static void WriteFrameNumber()
-        {
-            StringBuilder buf = new StringBuilder();
-            for (int i = 0; i < FrameCountRule.GetCount(); i++)
-            {
-                buf.AppendFormat("{0,4}", i + 1);
-            }
-            Console.WriteLine(buf);
-        }
-
-        private static void Roll(Game game)
-        {
-            game.Roll(GetPinFromUserInput());
-        }
-
-        private static int GetPinFromUserInput()
-        {
-            while (true)
-            {
-                Console.WriteLine("Please input integer (from 0 to 10).");
-                try
-                {
-                    string inputStr = Console.ReadLine();
-                    return int.Parse(inputStr);
-                }
-                catch (Exception)
-                {
-                }
-            }
         }
     }
 }
