@@ -8,7 +8,7 @@ namespace Bowling.Model
 {
     public class Roll
     {
-        private int _pin;
+        private readonly int _pin;
 
         public Roll(int p)
         {
@@ -18,6 +18,11 @@ namespace Bowling.Model
         public int GetPin()
         {
             return _pin;
+        }
+
+        public object Clone()
+        {
+            return new Roll(_pin);
         }
     }
 }

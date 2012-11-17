@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bowling.Model
 {
-    public class Frames
+    public class  Frames
     {
-        private List<Frame> _frames = new List<Frame>();
+        private readonly List<Frame> _frames = new List<Frame>();
 
         public Frames(int maxFrameCount)
         {
@@ -40,6 +40,23 @@ namespace Bowling.Model
         public Frame this[int i]
         {
             get { return _frames[i]; }
+        }
+
+        public static Frames Replace(Frames old, Frame from, Frame to)
+        {
+            Frames frames = new Frames(old._frames.Count);
+            for (int i = 0; i < old._frames.Count; i++)
+            {
+                if (old._frames[i] == from)
+                {
+                    frames._frames[i] = to;
+                }
+                else
+                {
+                    frames._frames[i] = old._frames[i];
+                }
+            }
+            return frames;
         }
     }
 }

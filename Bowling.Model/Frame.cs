@@ -8,17 +8,24 @@ namespace Bowling.Model
 {
     public class Frame
     {
-        private int _frameIndex;
-        private List<Roll> _rolls = new List<Roll>();
+        private readonly int _frameIndex;
+        private readonly List<Roll> _rolls = new List<Roll>();
 
         public Frame(int index)
         {
             _frameIndex = index;
         }
 
-        public void Append(Roll roll)
+        public Frame(int index, List<Roll> rolls, Roll roll)
         {
-            _rolls.Add(roll);
+            this._frameIndex = index;
+            foreach (Roll r in rolls) this._rolls.Add((Roll)r.Clone());
+            this._rolls.Add((Roll)roll.Clone());
+        }
+
+        public static Frame Append(Frame old, Roll roll)
+        {
+             return new Frame(old.GetFrameIndex(), old._rolls, roll);
         }
 
         public int GetRollCount()

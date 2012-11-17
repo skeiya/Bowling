@@ -14,7 +14,7 @@ namespace Bowling.Application
 
         public void Roll(int p)
         {
-            RollService.Roll(_frames, p);
+            _frames = RollService.Roll(_frames, p);
         }
 
         public Score CalcScore()

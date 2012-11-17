@@ -10,11 +10,11 @@ namespace Bowling.Application
 {
     class RollService
     {
-        internal static void Roll(Frames frames, int p)
+        internal static Frames Roll(Frames frames, int p)
         {
             Frame f = GetLastNotFullFrame(frames);
             if (!Acceptable(frames, p)) throw new Exception();
-            f.Append(new Roll(p));
+            return Frames.Replace(frames, f, Frame.Append(f, new Roll(p)));
         }
 
         internal static bool Acceptable(Frames frames, int p)
