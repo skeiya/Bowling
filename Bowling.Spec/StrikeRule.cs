@@ -30,5 +30,10 @@ namespace Bowling.Spec
             foreach (int pin in f.GetPins()) sum += pin;
             return sum;
         }
+
+        public static bool IsStrike(Roll roll)
+        {
+            return roll.GetPin() == PinNumberRule.GetMax();
+        }
     }
 }

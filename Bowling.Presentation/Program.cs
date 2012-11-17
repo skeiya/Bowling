@@ -41,27 +41,9 @@ namespace Bowling.Presentation
             StringBuilder buf = new StringBuilder();
             foreach (Frame f in game.GetFrames())
             {
-                buf.Append(GetRollsOfFrame(f));
+                buf.Append(RollFormatter.GetRollsOfFrame(f));
             }
             Console.WriteLine(buf);
-        }
-
-        private static string GetRollsOfFrame(Frame f)
-        {
-            if (StrikeRule.IsStrike(f))
-            {
-                return "   X";
-            }
-            if (SpareRule.IsSpare(f))
-            {
-                return string.Format("{0,2}", f[0].GetPin()) + " /";
-            }
-            StringBuilder buf = new StringBuilder();
-            foreach (int pin in f.GetPins())
-            {
-                buf.AppendFormat("{0,2}", pin);
-            }
-            return buf.ToString();
         }
 
         private static void WriteFrameNumber()

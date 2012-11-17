@@ -16,16 +16,17 @@ namespace Bowling.Model
             _frameIndex = index;
         }
 
-        public Frame(int index, List<Roll> rolls, Roll roll)
+        public Frame(int index, List<Roll> rolls)
         {
             this._frameIndex = index;
             foreach (Roll r in rolls) this._rolls.Add((Roll)r.Clone());
-            this._rolls.Add((Roll)roll.Clone());
         }
 
         public static Frame Append(Frame old, Roll roll)
         {
-             return new Frame(old.GetFrameIndex(), old._rolls, roll);
+            List<Roll> tmp = new List<Roll>(old._rolls);
+            tmp.Add(roll);
+            return new Frame(old.GetFrameIndex(), tmp);
         }
 
         public int GetRollCount()
