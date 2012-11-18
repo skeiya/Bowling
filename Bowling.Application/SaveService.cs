@@ -9,19 +9,20 @@ namespace Bowling.Application
 {
     public class SaveService
     {
-        internal static void Save(Frames frames, string path)
+        public static void Save(Frames frames, string path, IFileSystem fileSystem)
         {
-            // frame count
-
-            // frame<N>
-
-            //   frame index
-
-            //   roll count
-
-            //   roll<M>
-
-            //   pin
+            try
+            {
+                fileSystem.Open(path);
+                foreach (int pin in frames.GetPins())
+                {
+                    fileSystem.Write(pin.ToString() + ",");
+                }
+            }
+            finally
+            {
+                fileSystem.Close();
+            }
         }
     }
 }

@@ -50,6 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FileSystemMock.cs" />
+    <Compile Include="UnitTestSaveAndLoad.cs" />
     <Compile Include="UnitTestCommandFactory.cs" />
     <Compile Include="UnitTestGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +74,10 @@
     <ProjectReference Include="..\Bowling.Spec\Bowling.Spec.csproj">
       <Project>{4b7b91a5-3854-4790-a44d-c5bce9194e04}</Project>
       <Name>Bowling.Spec</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Bowling.Infrastructure.csproj">
+      <Project>{b1de9900-78e2-42ab-b8c4-2e7022dbdcab}</Project>
+      <Name>Bowling.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

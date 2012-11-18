@@ -8,7 +8,7 @@ using Bowling.Spec;
 
 namespace Bowling.Application
 {
-    class RollService
+    public class RollService
     {
         internal static Frames Roll(Frames frames, int p)
         {

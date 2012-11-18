@@ -11,6 +11,19 @@ namespace Bowling.Application
     public class Game
     {
         private Frames _frames = new Frames(FrameCountRule.GetCount());
+        private IFileSystem _fileSystem;
+
+        /// <summary>
+        /// For test only
+        /// </summary>
+        public Game()
+        {
+        }
+
+        public Game(IFileSystem fileSystem)
+        {
+            _fileSystem = fileSystem;
+        }
 
         public void Roll(int p)
         {
@@ -24,7 +37,7 @@ namespace Bowling.Application
 
         public void Save(string path)
         {
-            SaveService.Save(_frames, path);
+            SaveService.Save(_frames, path, _fileSystem);
         }
 
         public bool IsEnd()

@@ -39,10 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSystem.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bowling.Application\Bowling.Application.csproj">
+      <Project>{b0184307-b6e6-4342-83af-5d82912c0c5a}</Project>
+      <Name>Bowling.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bowling.Presentation\Bowling.Presentation.csproj">
       <Project>{b36c12a3-1d49-45aa-9b1f-d719e8446db5}</Project>
       <Name>Bowling.Presentation</Name>

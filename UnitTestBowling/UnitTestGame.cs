@@ -72,16 +72,5 @@ namespace UnitTestBowling
             game.Roll(2);
             game.Roll(9);
         }
-
-        [TestMethod]
-        public void Save()
-        {
-            Game game = new Game();
-            game.Roll(10);
-            game.Roll(8);
-            game.Roll(1);
-            game.Roll(3);
-            game.Save("C:\\hoge.txt");
-        }
     }
 }

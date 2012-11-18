@@ -7,7 +7,7 @@ namespace Bowling.Execution
     {
         static void Main(string[] args)
         {
-            Session app = new Session(new UserInterface());
+            Session app = new Session(new UserInterface(), new FileSystem());
             app.Start();
         }
     }
