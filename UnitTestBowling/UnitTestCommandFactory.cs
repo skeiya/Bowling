@@ -1,5 +1,4 @@
-﻿using System;
-using Bowling.Application;
+﻿using Bowling.Application;
 using Bowling.Presentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

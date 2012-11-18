@@ -1,7 +1,4 @@
-﻿using System;
-using Bowling.Application;
-using Bowling.Model;
-using Infrastructure;
+﻿using Bowling.Application;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestBowling
