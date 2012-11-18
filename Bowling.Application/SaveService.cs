@@ -9,7 +9,7 @@ namespace Bowling.Application
 {
     public class SaveService
     {
-        public static void Save(Frames frames, string path, IFileSystem fileSystem)
+        public static void Save(Frames frames, string path, IWriteFile fileSystem)
         {
             try
             {

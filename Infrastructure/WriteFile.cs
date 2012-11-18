@@ -8,7 +8,7 @@ using Bowling.Application;
 
 namespace Infrastructure
 {
-    public class FileSystem : IFileSystem
+    public class WriteFile : IWriteFile
     {
         StreamWriter _stream;
 

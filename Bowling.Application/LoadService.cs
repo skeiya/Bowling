@@ -9,19 +9,23 @@ namespace Bowling.Application
 {
     public class LoadService
     {
-        internal static void Load(Frames frames, string path)
+        internal static Frames Load(Frames frames, string path, IReadFile readFile)
         {
-            // frame count
-
-            // frame<N>
-
-            //   frame index
-
-            //   roll count
-
-            //   roll<M>
-
-            //   pin
+            try
+            {
+                readFile.Open(path);
+                string content = readFile.ReadLine();
+                foreach (string str in content.Split(','))
+                {
+                    if (str == "") break;
+                    frames = RollService.Roll(frames, int.Parse(str));
+                }
+            }
+            finally
+            {
+                readFile.Close();
+            }
+            return frames;
         }
     }
 }

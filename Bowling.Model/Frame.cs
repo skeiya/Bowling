@@ -52,5 +52,28 @@ namespace Bowling.Model
             get { return _rolls[i]; }
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (GetType() != obj.GetType()) return false;
+
+            Frame target = (Frame)obj;
+            if (this._rolls.Count != target._rolls.Count) return false;
+            for (int i = 0; i < this._rolls.Count; i++)
+            {
+                if (!this._rolls[i].Equals(target._rolls[i])) return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            foreach (Roll r in _rolls)
+            {
+                hash += r.GetHashCode();
+            }
+            return hash;
+        }
     }
 }

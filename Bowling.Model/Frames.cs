@@ -58,5 +58,29 @@ namespace Bowling.Model
             }
             return frames;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (GetType() != obj.GetType()) return false;
+            
+            Frames target = (Frames)obj;
+            if (this._frames.Count != target._frames.Count) return false;
+            for (int i = 0; i < this._frames.Count; i++)
+            {
+                if (!this._frames[i].Equals(target._frames[i])) return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            foreach (Frame f in _frames)
+            {
+                hash += f.GetHashCode();
+            }
+            return hash;
+        }
     }
 }

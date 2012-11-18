@@ -11,7 +11,8 @@ namespace Bowling.Application
     public class Game
     {
         private Frames _frames = new Frames(FrameCountRule.GetCount());
-        private IFileSystem _fileSystem;
+        private IWriteFile _writeFile;
+        private IReadFile _readFile;
 
         /// <summary>
         /// For test only
@@ -20,9 +21,10 @@ namespace Bowling.Application
         {
         }
 
-        public Game(IFileSystem fileSystem)
+        public Game(IWriteFile writeFile, IReadFile readFile)
         {
-            _fileSystem = fileSystem;
+            _writeFile = writeFile;
+            _readFile = readFile;
         }
 
         public void Roll(int p)
@@ -37,7 +39,7 @@ namespace Bowling.Application
 
         public void Save(string path)
         {
-            SaveService.Save(_frames, path, _fileSystem);
+            SaveService.Save(_frames, path, _writeFile);
         }
 
         public bool IsEnd()
@@ -65,7 +67,19 @@ namespace Bowling.Application
 
         public void Load(string path)
         {
-            LoadService.Load(_frames, path);
+            _frames = LoadService.Load(_frames, path, _readFile);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (GetType() != obj.GetType()) return false;
+            return this._frames.Equals(((Game)obj)._frames);
+        }
+
+        public override int GetHashCode()
+        {
+            return _frames.GetHashCode();
         }
     }
 }

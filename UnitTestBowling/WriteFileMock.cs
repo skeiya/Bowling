@@ -6,7 +6,7 @@ using Bowling.Application;
 
 namespace UnitTestBowling
 {
-    class FileSystemMock : IFileSystem
+    class WriteFileMock : IWriteFile
     {
         string _path;
         string _content = "";

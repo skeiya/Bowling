@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bowling.Application
 {
-    public interface IFileSystem
+    public interface IWriteFile
     {
         void Open(string path);
 

@@ -40,7 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
-    <Compile Include="IFileSystem.cs" />
+    <Compile Include="IWriteFile.cs" />
+    <Compile Include="IReadFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemainCalculator.cs" />
     <Compile Include="RollService.cs" />
