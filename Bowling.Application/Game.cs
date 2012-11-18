@@ -22,9 +22,9 @@ namespace Bowling.Application
             return ScoreService.Calc(_frames);
         }
 
-        public void Save()
+        public void Save(string path)
         {
-            SaveService.Save(_frames);
+            SaveService.Save(_frames, path);
         }
 
         public bool IsEnd()
@@ -48,6 +48,11 @@ namespace Bowling.Application
         public bool IsFullAt(int i)
         {
             return FullFrameRule.IsFull(_frames[i]);
+        }
+
+        public void Load(string path)
+        {
+            LoadService.Load(_frames, path);
         }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="RollService.cs" />
     <Compile Include="SaveService.cs" />
     <Compile Include="ScoreService.cs" />
+    <Compile Include="LoadService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bowling.Model\Bowling.Model.csproj">

@@ -81,7 +81,7 @@ namespace UnitTestBowling
             game.Roll(8);
             game.Roll(1);
             game.Roll(3);
-            game.Save();
+            game.Save("C:\\hoge.txt");
         }
     }
 }

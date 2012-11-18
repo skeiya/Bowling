@@ -9,7 +9,7 @@ using Bowling.Spec;
 
 namespace Bowling.Presentation
 {
-    class CommandRoll : ICommand
+    public class CommandRoll : ICommand
     {
         private Game _game;
         private int _pin;

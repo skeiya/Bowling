@@ -7,9 +7,9 @@ using Bowling.Model;
 
 namespace Bowling.Application
 {
-    public class SaveService
+    public class LoadService
     {
-        internal static void Save(Frames frames, string path)
+        internal static void Load(Frames frames, string path)
         {
             // frame count
 

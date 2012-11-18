@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B36C12A3-1D49-45AA-9B1F-D719E8446DB5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bowling.Presentation</RootNamespace>
-    <AssemblyName>Bowling.Presentation</AssemblyName>
+    <RootNamespace>Infrastructure</RootNamespace>
+    <AssemblyName>Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,35 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandRoll.cs" />
-    <Compile Include="CommandSave.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="CommandFactory.cs" />
-    <Compile Include="IUserInterface.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="UserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RollFormatter.cs" />
-    <Compile Include="CommandLoad.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bowling.Application\Bowling.Application.csproj">
-      <Project>{b0184307-b6e6-4342-83af-5d82912c0c5a}</Project>
-      <Name>Bowling.Application</Name>
+    <ProjectReference Include="..\Bowling.Presentation\Bowling.Presentation.csproj">
+      <Project>{b36c12a3-1d49-45aa-9b1f-d719e8446db5}</Project>
+      <Name>Bowling.Presentation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bowling.Model\Bowling.Model.csproj">
-      <Project>{c84065bf-d332-491d-9ee9-c86fa75bf576}</Project>
-      <Name>Bowling.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bowling.Spec\Bowling.Spec.csproj">
-      <Project>{4b7b91a5-3854-4790-a44d-c5bce9194e04}</Project>
-      <Name>Bowling.Spec</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

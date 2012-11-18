@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Spec", "Bowling.Spe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Presentation", "Bowling.Presentation\Bowling.Presentation.csproj", "{B36C12A3-1D49-45AA-9B1F-D719E8446DB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{B0184307-B6E6-4342-83AF-5D82912C0C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0184307-B6E6-4342-83AF-5D82912C0C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0184307-B6E6-4342-83AF-5D82912C0C5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B36C12A3-1D49-45AA-9B1F-D719E8446DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B36C12A3-1D49-45AA-9B1F-D719E8446DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B36C12A3-1D49-45AA-9B1F-D719E8446DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU

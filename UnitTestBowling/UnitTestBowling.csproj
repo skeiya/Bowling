@@ -50,9 +50,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestCommandFactory.cs" />
     <Compile Include="UnitTestGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestRollFormatter.cs" />
+    <Compile Include="UserInterfaceMock.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bowling.Application\Bowling.Application.csproj">

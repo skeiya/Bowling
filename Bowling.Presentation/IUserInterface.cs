@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bowling.Presentation
 {
-    public interface ICommand
+    public interface IUserInterface
     {
-        void Exec();
+        void RequestInput();
+        string AcceptInput();
     }
 }

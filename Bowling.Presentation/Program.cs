@@ -14,12 +14,18 @@ namespace Bowling.Presentation
         static void Main(string[] args)
         {
             Game game = new Game();
+            IUserInterface ui = UserInterface();
             while (!game.IsEnd())
             {
-                ICommand c = CommandFactory.CraeteFromUserInput(game);
+                ICommand c = CommandFactory.CraeteFromUserInput(ui, game);
                 c.Exec();
             }
             Console.ReadKey();
+        }
+
+        private static IUserInterface UserInterface()
+        {
+            throw new NotImplementedException();
         }
     }
 }

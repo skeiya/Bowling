@@ -7,27 +7,31 @@ using Bowling.Application;
 
 namespace Bowling.Presentation
 {
-    class CommandFactory
+    public class CommandFactory
     {
-        private static int GetPinFromUserInput()
+        public static ICommand CraeteFromUserInput(IUserInterface ui, Game game)
         {
             while (true)
             {
-                Console.WriteLine("Please input integer (from 0 to 10).");
+                ui.RequestInput();
+                string inputStr = ui.AcceptInput();
+
                 try
                 {
-                    string inputStr = Console.ReadLine();
-                    return int.Parse(inputStr);
+                    if (inputStr[0] == 's' && inputStr[1] == ':')
+                    {
+                        return new CommandSave(game, inputStr.Substring(2));
+                    }
+                    if (inputStr[0] == 'l' && inputStr[1] == ':')
+                    {
+                        return new CommandLoad(game, inputStr.Substring(2));
+                    }
+                    return new CommandRoll(game, int.Parse(inputStr));
                 }
                 catch (Exception)
                 {
                 }
             }
-        }
-
-        internal static ICommand CraeteFromUserInput(Game game)
-        {
-            return new CommandRoll(game, GetPinFromUserInput());
         }
     }
 
