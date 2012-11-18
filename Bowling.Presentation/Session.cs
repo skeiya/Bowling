@@ -21,8 +21,14 @@ namespace Bowling.Presentation
             Game game = new Game(_writeFile, _readFile);
             while (!game.IsEnd())
             {
-                ICommand c = CommandFactory.CraeteFromUserInput(_ui, game);
-                c.Exec();
+                try
+                {
+                    ICommand c = CommandFactory.CraeteFromUserInput(_ui, game);
+                    c.Exec();
+                }
+                catch (Exception)
+                {
+                }
             }
             Console.ReadKey();
         }

@@ -67,7 +67,7 @@ namespace Bowling.Application
 
         public void Load(string path)
         {
-            _frames = LoadService.Load(_frames, path, _readFile);
+            _frames = LoadService.Load(new Frames(FrameCountRule.GetCount()), path, _readFile);
         }
 
         public override bool Equals(object obj)

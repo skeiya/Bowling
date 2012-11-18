@@ -49,6 +49,7 @@
     <Compile Include="ICommand.cs" />
     <Compile Include="CommandFactory.cs" />
     <Compile Include="IUserInterface.cs" />
+    <Compile Include="ScoreDrawer.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RollFormatter.cs" />

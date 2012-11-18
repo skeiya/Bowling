@@ -20,6 +20,7 @@ namespace Bowling.Presentation
         public void Exec()
         {
             _game.Load(_path);
+            ScoreDrawer.Draw(_game);
         }
     }
 }
