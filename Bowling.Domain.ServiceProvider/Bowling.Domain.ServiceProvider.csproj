@@ -59,11 +59,11 @@
     <Compile Include="ScoreService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bowling.Model\Bowling.Domain.Model.csproj">
+    <ProjectReference Include="..\Bowling.Domain.Model\Bowling.Domain.Model.csproj">
       <Project>{c84065bf-d332-491d-9ee9-c86fa75bf576}</Project>
       <Name>Bowling.Domain.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bowling.Spec\Bowling.Domain.Spec.csproj">
+    <ProjectReference Include="..\Bowling.Domain.Spec\Bowling.Domain.Spec.csproj">
       <Project>{4b7b91a5-3854-4790-a44d-c5bce9194e04}</Project>
       <Name>Bowling.Domain.Spec</Name>
     </ProjectReference>

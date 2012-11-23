@@ -47,7 +47,7 @@
     <Compile Include="StrikeRule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bowling.Model\Bowling.Domain.Model.csproj">
+    <ProjectReference Include="..\Bowling.Domain.Model\Bowling.Domain.Model.csproj">
       <Project>{c84065bf-d332-491d-9ee9-c86fa75bf576}</Project>
       <Name>Bowling.Domain.Model</Name>
     </ProjectReference>
