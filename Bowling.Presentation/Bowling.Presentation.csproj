@@ -54,7 +54,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bowling.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
+    <ProjectReference Include="..\Bowling.Domain.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
       <Project>{94086c92-644d-46fe-955e-3a0ec6147599}</Project>
       <Name>Bowling.Domain.ServiceProvider</Name>
     </ProjectReference>

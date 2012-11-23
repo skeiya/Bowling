@@ -43,18 +43,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bowling.Domain.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
+      <Project>{94086c92-644d-46fe-955e-3a0ec6147599}</Project>
+      <Name>Bowling.Domain.ServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bowling.Infrastructure\Bowling.Infrastructure.csproj">
+      <Project>{b1de9900-78e2-42ab-b8c4-2e7022dbdcab}</Project>
+      <Name>Bowling.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bowling.Presentation\Bowling.Presentation.csproj">
       <Project>{b36c12a3-1d49-45aa-9b1f-d719e8446db5}</Project>
       <Name>Bowling.Presentation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bowling.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
-      <Project>{94086c92-644d-46fe-955e-3a0ec6147599}</Project>
-      <Name>Bowling.Domain.ServiceProvider</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Bowling.Infrastructure.csproj">
-      <Project>{b1de9900-78e2-42ab-b8c4-2e7022dbdcab}</Project>
-      <Name>Bowling.Infrastructure</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

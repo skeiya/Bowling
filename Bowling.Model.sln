@@ -1,21 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Domain.Model", "Bowling.Model\Bowling.Domain.Model.csproj", "{C84065BF-D332-491D-9EE9-C86FA75BF576}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestBowling", "UnitTestBowling\UnitTestBowling.csproj", "{286E4707-CBB0-4427-91C8-DD872C820ECD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Application", "Bowling.Application\Bowling.Application.csproj", "{B0184307-B6E6-4342-83AF-5D82912C0C5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Domain.Spec", "Bowling.Spec\Bowling.Domain.Spec.csproj", "{4B7B91A5-3854-4790-A44D-C5BCE9194E04}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Presentation", "Bowling.Presentation\Bowling.Presentation.csproj", "{B36C12A3-1D49-45AA-9B1F-D719E8446DB5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Infrastructure", "Infrastructure\Bowling.Infrastructure.csproj", "{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.DependencyInjector", "Bowling.DependencyInjector\Bowling.DependencyInjector.csproj", "{AD2933D2-CD43-4190-852B-D46BE6BE27F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Domain.ServiceProvider", "Bowling.ServiceProvider\Bowling.Domain.ServiceProvider.csproj", "{94086C92-644D-46FE-955E-3A0EC6147599}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Domain.Model", "Bowling.Domain.Model\Bowling.Domain.Model.csproj", "{C84065BF-D332-491D-9EE9-C86FA75BF576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Domain.ServiceProvider", "Bowling.Domain.ServiceProvider\Bowling.Domain.ServiceProvider.csproj", "{94086C92-644D-46FE-955E-3A0EC6147599}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Infrastructure", "Bowling.Infrastructure\Bowling.Infrastructure.csproj", "{B1DE9900-78E2-42AB-B8C4-2E7022DBDCAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Domain.Spec", "Bowling.Domain.Spec\Bowling.Domain.Spec.csproj", "{4B7B91A5-3854-4790-A44D-C5BCE9194E04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -50,17 +50,9 @@
       <Project>{ad2933d2-cd43-4190-852b-d46be6be27f0}</Project>
       <Name>Bowling.DependencyInjector</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bowling.Model\Bowling.Domain.Model.csproj">
-      <Project>{c84065bf-d332-491d-9ee9-c86fa75bf576}</Project>
-      <Name>Bowling.Domain.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bowling.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
+    <ProjectReference Include="..\Bowling.Domain.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
       <Project>{94086c92-644d-46fe-955e-3a0ec6147599}</Project>
       <Name>Bowling.Domain.ServiceProvider</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bowling.Spec\Bowling.Domain.Spec.csproj">
-      <Project>{4b7b91a5-3854-4790-a44d-c5bce9194e04}</Project>
-      <Name>Bowling.Domain.Spec</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
