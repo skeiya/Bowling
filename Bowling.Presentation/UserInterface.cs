@@ -1,7 +1,7 @@
 ﻿using System;
-using Bowling.Presentation;
+using Bowling.Domain.ServiceProvider;
 
-namespace Infrastructure
+namespace Bowling.Presentation
 {
     public class UserInterface : IUserInterface
     {

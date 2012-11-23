@@ -1,19 +1,19 @@
 ﻿using System;
-using Bowling.Model;
-using Bowling.Spec;
+using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
     public class RollService
     {
-        internal static Frames Roll(Frames frames, int p)
+        public static Frames Roll(Frames frames, int p)
         {
             Frame f = GetLastNotFullFrame(frames);
             if (!Acceptable(frames, p)) throw new Exception();
             return Frames.Replace(frames, f, Frame.Append(f, new Roll(p)));
         }
 
-        internal static bool Acceptable(Frames frames, int p)
+        public static bool Acceptable(Frames frames, int p)
         {
             if (p < 0) return false;
             return GetRemainPins(frames) >= p;
@@ -33,7 +33,7 @@ namespace Bowling.Application
             throw new Exception();
         }
 
-        internal static bool IsEnd(Frames frames)
+        public static bool IsEnd(Frames frames)
         {
             return FullFrameRule.IsFull(frames[FrameCountRule.GetCount() - 1]);
         }

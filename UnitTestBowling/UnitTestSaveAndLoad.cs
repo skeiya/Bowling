@@ -1,4 +1,4 @@
-﻿using Bowling.Application;
+﻿using Bowling.Domain.ServiceProvider;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestBowling
@@ -9,16 +9,16 @@ namespace UnitTestBowling
         [TestMethod]
         public void Save()
         {
-            WriteFileMock fileSystem = new WriteFileMock();
+            WriteFileMock writeFile = new WriteFileMock();
+            UserInterfaceMock ui = new UserInterfaceMock();
+            ui.AddContent("0", "1", "1", "1", "2", "1", "3", "1", "4", "1", "5", "1", "6", "1", "7", "1", "8", "1", "9", "1");
+            ui.AddContent("s:C:\\data.txt");
+            ui.AddContent("q");
 
-            Game game = new Game(fileSystem, null);
-            RollMany(game, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1);
+            Game game = new Game(ui, writeFile, null);
+            game.Start();
 
-            string path = "C:\\data.txt"; 
-            game.Save(path);
-
-            Assert.AreEqual(path, fileSystem.GetPath());
-            Assert.AreEqual("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,", fileSystem.GetContent());
+            Assert.AreEqual("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,", writeFile.GetContent());
         }
 
         private void RollMany(Game game, params int[] pins)
@@ -29,14 +29,11 @@ namespace UnitTestBowling
         [TestMethod]
         public void Load()
         {
-            ReadFileMock file = new ReadFileMock("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,");
-
-            Game game = new Game(null, file);
-
-            string path = "C:\\data.txt";
-            game.Load(path);
-
-            Assert.AreEqual(path, file.GetPath());
+            ReadFileMock fileRead = new ReadFileMock("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,");
+            UserInterfaceMock ui = new UserInterfaceMock("l:C:\\data.txt");
+            ui.AddContent("q");
+            Game game = new Game(ui, null, fileRead);
+            game.Start();
 
             Game evidence = new Game();
             RollMany(evidence, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1);

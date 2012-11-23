@@ -41,17 +41,16 @@
   <ItemGroup>
     <Compile Include="ReadFile.cs" />
     <Compile Include="WriteFile.cs" />
-    <Compile Include="UserInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bowling.Application\Bowling.Application.csproj">
-      <Project>{b0184307-b6e6-4342-83af-5d82912c0c5a}</Project>
-      <Name>Bowling.Application</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Bowling.Presentation\Bowling.Presentation.csproj">
       <Project>{b36c12a3-1d49-45aa-9b1f-d719e8446db5}</Project>
       <Name>Bowling.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bowling.ServiceProvider\Bowling.Domain.ServiceProvider.csproj">
+      <Project>{94086c92-644d-46fe-955e-3a0ec6147599}</Project>
+      <Name>Bowling.Domain.ServiceProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

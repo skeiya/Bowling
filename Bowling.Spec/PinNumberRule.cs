@@ -1,5 +1,5 @@
 ﻿
-namespace Bowling.Spec
+namespace Bowling.Domain.Spec
 {
     public class PinNumberRule
     {

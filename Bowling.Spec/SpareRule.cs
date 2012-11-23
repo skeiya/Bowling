@@ -1,6 +1,6 @@
-﻿using Bowling.Model;
+﻿using Bowling.Domain.Model;
 
-namespace Bowling.Spec
+namespace Bowling.Domain.Spec
 {
     public class SpareRule
     {

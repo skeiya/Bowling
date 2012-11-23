@@ -1,5 +1,5 @@
 ﻿
-namespace Bowling.Presentation
+namespace Bowling.Domain.ServiceProvider
 {
     public interface ICommand
     {

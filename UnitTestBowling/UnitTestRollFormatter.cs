@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Bowling.Presentation;
-using Bowling.Model;
-using Bowling.Spec;
+using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
+using Bowling.Domain.ServiceProvider;
 
 namespace UnitTestBowling
 {

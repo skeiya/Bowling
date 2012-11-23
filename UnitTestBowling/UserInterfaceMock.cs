@@ -1,14 +1,28 @@
-﻿using Bowling.Presentation;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Bowling.Domain.ServiceProvider;
 
 namespace UnitTestBowling
 {
     class UserInterfaceMock : IUserInterface
     {
-        private string _inputString;
+        private List<string> _list = new List<string>();
+        private int _i = 0;
 
         public UserInterfaceMock(string p)
         {
-            this._inputString = p;
+            _list.Add(p);
+        }
+
+        public UserInterfaceMock()
+        {
+        }
+
+        internal void AddContent(params string[] list)
+        {
+            foreach (string str in list) _list.Add(str);
         }
 
         public void RequestInput()
@@ -18,7 +32,7 @@ namespace UnitTestBowling
 
         public string AcceptInput()
         {
-            return _inputString;
+            return _list[_i++];
         }
     }
 }

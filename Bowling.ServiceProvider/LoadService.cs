@@ -1,10 +1,10 @@
-﻿using Bowling.Model;
+﻿using Bowling.Domain.Model;
 
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
     public class LoadService
     {
-        internal static Frames Load(Frames frames, string path, IReadFile readFile)
+        public static Frames Load(Frames frames, string path, IReadFile readFile)
         {
             try
             {

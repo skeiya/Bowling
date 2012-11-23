@@ -1,5 +1,5 @@
 ﻿
-namespace Bowling.Model
+namespace Bowling.Domain.Model
 {
     public class Score
     {

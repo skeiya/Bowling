@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
-using Bowling.Model;
-using Bowling.Spec;
+﻿using System;
+using System.Collections.Generic;
+using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
     public class Game
     {
         private Frames _frames = new Frames(FrameCountRule.GetCount());
+        private IUserInterface _ui;
         private IWriteFile _writeFile;
         private IReadFile _readFile;
 
@@ -17,10 +19,28 @@ namespace Bowling.Application
         {
         }
 
-        public Game(IWriteFile writeFile, IReadFile readFile)
+        public Game(IUserInterface ui, IWriteFile writeFile, IReadFile readFile)
         {
+            _ui = ui;
             _writeFile = writeFile;
             _readFile = readFile;
+        }
+
+        public void Start()
+        {
+            while (!IsEnd())
+            {
+                try
+                {
+                    ICommand c = CommandFactory.CraeteFromUserInput(_ui, _readFile, _writeFile, this);
+                    c.Exec();
+                    if (c.GetType() == typeof(CommandQuit)) return;
+                }
+                catch (Exception)
+                {
+                }
+            }
+            Console.ReadKey();
         }
 
         public void Roll(int p)
@@ -33,32 +53,9 @@ namespace Bowling.Application
             return ScoreService.Calc(_frames);
         }
 
-        public void Save(string path)
-        {
-            SaveService.Save(_frames, path, _writeFile);
-        }
-
         public bool IsEnd()
         {
             return RollService.IsEnd(_frames);
-        }
-
-        public IEnumerable<Frame> GetFrames()
-        {
-            foreach (Frame f in _frames)
-            {
-                yield return f;
-            }
-        }
-
-        public Score CalcScoreAt(int index)
-        {
-            return ScoreService.CalcAt(_frames, index);
-        }
-
-        public bool IsFullAt(int i)
-        {
-            return FullFrameRule.IsFull(_frames[i]);
         }
 
         public void Load(string path)
@@ -76,6 +73,16 @@ namespace Bowling.Application
         public override int GetHashCode()
         {
             return _frames.GetHashCode();
+        }
+
+        internal Frames GetFrames()
+        {
+            return _frames;
+        }
+
+        internal void SetFrames(Frames frames)
+        {
+            _frames = frames;
         }
     }
 }

@@ -1,6 +1,5 @@
-﻿using Bowling.Application;
-
-namespace Bowling.Presentation
+﻿using Bowling.Domain.Model;
+namespace Bowling.Domain.ServiceProvider
 {
     public class CommandRoll : ICommand
     {
@@ -15,8 +14,9 @@ namespace Bowling.Presentation
 
         public void Exec()
         {
-            _game.Roll(_pin);
-            ScoreDrawer.Draw(_game);
+            Frames frames = RollService.Roll(_game.GetFrames(), _pin);
+            _game.SetFrames(frames);
+            ScoreDrawer.Draw(frames);
         }
     }
 }

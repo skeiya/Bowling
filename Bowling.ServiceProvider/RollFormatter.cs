@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
-using Bowling.Model;
-using Bowling.Spec;
+using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
-namespace Bowling.Presentation
+namespace Bowling.Domain.ServiceProvider
 {
     public class RollFormatter
     {

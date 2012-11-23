@@ -1,7 +1,7 @@
-﻿using Bowling.Model;
-using Bowling.Spec;
+﻿using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
     class RemainCalculator
     {

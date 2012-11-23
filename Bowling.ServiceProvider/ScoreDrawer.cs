@@ -1,35 +1,34 @@
 ﻿using System;
 using System.Text;
-using Bowling.Application;
-using Bowling.Model;
-using Bowling.Spec;
+using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
-namespace Bowling.Presentation
+namespace Bowling.Domain.ServiceProvider
 {
     class ScoreDrawer
     {
-        internal static void Draw(Game game)
+        internal static void Draw(Frames frames)
         {
             WriteFrameNumber();
-            WriteRolls(game);
-            WriteScores(game);
+            WriteRolls(frames);
+            WriteScores(frames);
         }
 
-        private static void WriteScores(Game game)
+        private static void WriteScores(Frames frames)
         {
             StringBuilder buf = new StringBuilder();
             for (int i = 0; i < FrameCountRule.GetCount(); i++)
             {
-                if (!game.IsFullAt(i)) continue;
-                buf.AppendFormat("{0,4}", game.CalcScoreAt(i));
+                if (!FullFrameRule.IsFull(frames[i])) continue;
+                buf.AppendFormat("{0,4}", ScoreService.CalcAt(frames, i));
             }
             Console.WriteLine(buf);
         }
 
-        private static void WriteRolls(Game game)
+        private static void WriteRolls(Frames frames)
         {
             StringBuilder buf = new StringBuilder();
-            foreach (Frame f in game.GetFrames())
+            foreach (Frame f in frames)
             {
                 buf.Append(RollFormatter.GetRollsOfFrame(f));
             }

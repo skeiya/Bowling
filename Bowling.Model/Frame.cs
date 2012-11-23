@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bowling.Model
+namespace Bowling.Domain.Model
 {
     public class Frame
     {

@@ -1,6 +1,6 @@
-﻿using Bowling.Model;
+﻿using Bowling.Domain.Model;
 
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
     public class SaveService
     {

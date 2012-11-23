@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using Bowling.Model;
-using Bowling.Spec;
+using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
-    class ScoreService
+    public class ScoreService
     {
-        internal static Score Calc(Frames frames)
+        public static Score Calc(Frames frames)
         {
             return CalcAt(frames, FrameCountRule.GetCount() - 1);
         }
@@ -74,7 +74,7 @@ namespace Bowling.Application
             return sum;
         }
 
-        internal static Score CalcAt(Frames frames, int index)
+        public static Score CalcAt(Frames frames, int index)
         {
             return new Score(CalcBase(frames, index) + CalcBonus(frames, index));
         }

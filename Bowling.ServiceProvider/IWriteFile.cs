@@ -1,5 +1,5 @@
 ﻿
-namespace Bowling.Application
+namespace Bowling.Domain.ServiceProvider
 {
     public interface IWriteFile
     {

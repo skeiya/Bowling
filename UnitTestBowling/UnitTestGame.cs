@@ -1,6 +1,6 @@
 ﻿using System;
-using Bowling.Application;
-using Bowling.Model;
+using Bowling.Domain.Model;
+using Bowling.Domain.ServiceProvider;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestBowling

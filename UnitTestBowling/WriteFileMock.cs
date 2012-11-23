@@ -1,4 +1,4 @@
-﻿using Bowling.Application;
+﻿using Bowling.Domain.ServiceProvider;
 
 namespace UnitTestBowling
 {
