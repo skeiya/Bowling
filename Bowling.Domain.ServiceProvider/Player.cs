@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Bowling.Domain.Model;
+﻿using Bowling.Domain.Model;
 using Bowling.Domain.Spec;
 
 namespace Bowling.Domain.ServiceProvider
