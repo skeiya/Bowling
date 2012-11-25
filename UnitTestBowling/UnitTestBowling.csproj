@@ -55,7 +55,7 @@
     <Compile Include="WriteFileMock.cs" />
     <Compile Include="UnitTestSaveAndLoad.cs" />
     <Compile Include="UnitTestCommandFactory.cs" />
-    <Compile Include="UnitTestGame.cs" />
+    <Compile Include="UnitTestPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestRollFormatter.cs" />
   </ItemGroup>
