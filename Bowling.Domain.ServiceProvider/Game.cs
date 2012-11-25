@@ -9,13 +9,13 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class Game
     {
-        private IUserInterface _userInterface;
+        private IMyConsole _userInterface;
         private IWriteFile _writeFile;
         private IReadFile _readFile;
 
         private Player _player = new Player();
 
-        public Game(IUserInterface userInterface, IWriteFile writeFile, IReadFile readFile)
+        public Game(IMyConsole userInterface, IWriteFile writeFile, IReadFile readFile)
         {
             this._userInterface = userInterface;
             this._writeFile = writeFile;

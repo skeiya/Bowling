@@ -48,7 +48,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="IReadFile.cs" />
-    <Compile Include="IUserInterface.cs" />
+    <Compile Include="IMyConsole.cs" />
     <Compile Include="IWriteFile.cs" />
     <Compile Include="LoadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

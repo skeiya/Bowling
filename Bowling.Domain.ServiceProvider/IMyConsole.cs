@@ -1,7 +1,7 @@
 ﻿
 namespace Bowling.Domain.ServiceProvider
 {
-    public interface IUserInterface
+    public interface IMyConsole
     {
         void RequestInput();
         string AcceptInput();

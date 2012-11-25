@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Bowling.Domain.ServiceProvider;
 
-namespace Infrastructure
+namespace Bowling.Infrastructure
 {
     public class WriteFile : IWriteFile
     {

@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bowling.Domain.ServiceProvider;
-using Bowling.Presentation;
-using Infrastructure;
+using Bowling.Infrastructure;
 
 namespace Bowling.DependencyInjector
 {
     public class Injector
     {
-        public static IUserInterface CreateUserInterface()
+        public static IMyConsole CreateUserInterface()
         {
-            return new UserInterface();
+            return new MyConsole();
         }
 
         public static IWriteFile CreateWriteFile()

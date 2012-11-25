@@ -1,9 +1,9 @@
 ﻿using System;
 using Bowling.Domain.ServiceProvider;
 
-namespace Bowling.Presentation
+namespace Bowling.Infrastructure
 {
-    public class UserInterface : IUserInterface
+    public class MyConsole : IMyConsole
     {
         public void RequestInput()
         {

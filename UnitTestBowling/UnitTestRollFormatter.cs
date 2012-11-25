@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Bowling.Presentation;
 using Bowling.Domain.Model;
 using Bowling.Domain.Spec;
 using Bowling.Domain.ServiceProvider;

@@ -6,7 +6,7 @@ using Bowling.Domain.ServiceProvider;
 
 namespace UnitTestBowling
 {
-    class UserInterfaceMock : IUserInterface
+    class UserInterfaceMock : IMyConsole
     {
         private List<string> _list = new List<string>();
         private int _i = 0;
