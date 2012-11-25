@@ -5,13 +5,13 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class CommandLoad : ICommand
     {
-        private Player _game;
+        private Player _player;
         private string _path;
         private IReadFile _readFile;
 
-        public CommandLoad(Player game, string p, IReadFile readFile)
+        public CommandLoad(Player player, string p, IReadFile readFile)
         {
-            this._game = game;
+            this._player = player;
             this._path = p;
             this._readFile = readFile;
         }
@@ -19,7 +19,7 @@ namespace Bowling.Domain.ServiceProvider
         public void Exec()
         {
             Frames frames = LoadService.Load(new Frames(FrameCountRule.GetCount()), _path, _readFile);
-            _game.SetFrames(frames);
+            _player.SetFrames(frames);
             ScoreDrawer.Draw(frames);
         }
     }

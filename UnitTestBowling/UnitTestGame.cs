@@ -11,48 +11,48 @@ namespace UnitTestBowling
         [TestMethod]
         public void OneRoll()
         {
-            Player game = new Player();
-            game.Roll(2);
-            Assert.AreEqual(new Score(2), game.CalcScore());
+            Player player = new Player();
+            player.Roll(2);
+            Assert.AreEqual(new Score(2), player.CalcScore());
         }
 
         [TestMethod]
         public void TwoRoll()
         {
-            Player game = new Player();
-            game.Roll(2);
-            game.Roll(3);
-            Assert.AreEqual(new Score(5), game.CalcScore());
+            Player player = new Player();
+            player.Roll(2);
+            player.Roll(3);
+            Assert.AreEqual(new Score(5), player.CalcScore());
         }
 
         [TestMethod]
         public void Spare()
         {
-            Player game = new Player();
-            game.Roll(2);
-            game.Roll(8);
-            game.Roll(2);
-            game.Roll(3);
-            Assert.AreEqual(new Score(17), game.CalcScore());
+            Player player = new Player();
+            player.Roll(2);
+            player.Roll(8);
+            player.Roll(2);
+            player.Roll(3);
+            Assert.AreEqual(new Score(17), player.CalcScore());
         }
 
         [TestMethod]
         public void Strike()
         {
-            Player game = new Player();
-            game.Roll(10);
-            game.Roll(8);
-            game.Roll(1);
-            game.Roll(3);
-            Assert.AreEqual(new Score(31), game.CalcScore());
+            Player player = new Player();
+            player.Roll(10);
+            player.Roll(8);
+            player.Roll(1);
+            player.Roll(3);
+            Assert.AreEqual(new Score(31), player.CalcScore());
         }
 
         [TestMethod]
         public void Perfect()
         {
-            Player game = new Player();
-            for (int i = 0; i < 12; i++) game.Roll(10);
-            Assert.AreEqual(new Score(300), game.CalcScore());
+            Player player = new Player();
+            for (int i = 0; i < 12; i++) player.Roll(10);
+            Assert.AreEqual(new Score(300), player.CalcScore());
         }
 
 
@@ -60,17 +60,17 @@ namespace UnitTestBowling
         [ExpectedException(typeof(Exception))]
         public void ErrorOneRoll()
         {
-            Player game = new Player();
-            game.Roll(-1);
+            Player player = new Player();
+            player.Roll(-1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void ErrorFrameOver()
         {
-            Player game = new Player();
-            game.Roll(2);
-            game.Roll(9);
+            Player player = new Player();
+            player.Roll(2);
+            player.Roll(9);
         }
     }
 }

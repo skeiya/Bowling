@@ -5,7 +5,7 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class CommandFactory
     {
-        public static ICommand CraeteFromUserInput(IUserInterface ui, IReadFile readFile, IWriteFile writeFile, Player game)
+        public static ICommand CraeteFromUserInput(IUserInterface ui, IReadFile readFile, IWriteFile writeFile, Player player)
         {
             while (true)
             {
@@ -16,17 +16,17 @@ namespace Bowling.Domain.ServiceProvider
                 {
                     if (inputStr[0] == 's' && inputStr[1] == ':')
                     {
-                        return new CommandSave(game.GetFrames(), inputStr.Substring(2), writeFile);
+                        return new CommandSave(player.GetFrames(), inputStr.Substring(2), writeFile);
                     }
                     if (inputStr[0] == 'l' && inputStr[1] == ':')
                     {
-                        return new CommandLoad(game, inputStr.Substring(2), readFile);
+                        return new CommandLoad(player, inputStr.Substring(2), readFile);
                     }
                     if (inputStr.Length == 1 && inputStr[0] == 'q')
                     {
                         return new CommandQuit();
                     }
-                    return new CommandRoll(game, int.Parse(inputStr));
+                    return new CommandRoll(player, int.Parse(inputStr));
                 }
                 catch (Exception)
                 {

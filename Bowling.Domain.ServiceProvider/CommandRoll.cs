@@ -3,19 +3,19 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class CommandRoll : ICommand
     {
-        private Player _game;
+        private Player _player;
         private int _pin;
 
-        public CommandRoll(Player game, int pin)
+        public CommandRoll(Player player, int pin)
         {
-            _game = game;
+            _player = player;
             _pin = pin;
         }
 
         public void Exec()
         {
-            Frames frames = RollService.Roll(_game.GetFrames(), _pin);
-            _game.SetFrames(frames);
+            Frames frames = RollService.Roll(_player.GetFrames(), _pin);
+            _player.SetFrames(frames);
             ScoreDrawer.Draw(frames);
         }
     }

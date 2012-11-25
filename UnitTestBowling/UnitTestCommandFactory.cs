@@ -11,27 +11,27 @@ namespace UnitTestBowling
         [TestMethod]
         public void CreateCommandRoll()
         {
-            Player game = new Player();
+            Player player = new Player();
             IUserInterface ui = new UserInterfaceMock("3");
-            ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, game);
+            ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, player);
             Assert.IsInstanceOfType(c, typeof(CommandRoll));
         }
 
         [TestMethod]
         public void CreateCommandSave()
         {
-            Player game = new Player();
+            Player player = new Player();
             IUserInterface ui = new UserInterfaceMock("s:C:\\work\\data.txt");
-            ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, game);
+            ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, player);
             Assert.IsInstanceOfType(c, typeof(CommandSave));
         }
 
         [TestMethod]
         public void CreateCommandLoad()
         {
-            Player game = new Player();
+            Player player = new Player();
             IUserInterface ui = new UserInterfaceMock("l:C:\\work\\data.txt");
-            ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, game);
+            ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, player);
             Assert.IsInstanceOfType(c, typeof(CommandLoad));
         }
     }
