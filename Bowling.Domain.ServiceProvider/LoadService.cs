@@ -1,11 +1,13 @@
 ﻿using Bowling.Domain.Model;
+using Bowling.Domain.Spec;
 
 namespace Bowling.Domain.ServiceProvider
 {
     public class LoadService
     {
-        public static Frames Load(Frames frames, string path, IReadFile readFile)
+        public static Frames Load(string path, IReadFile readFile)
         {
+            Frames frames = new Frames(FrameCountRule.GetCount());
             try
             {
                 readFile.Open(path);

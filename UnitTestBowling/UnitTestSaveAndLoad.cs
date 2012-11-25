@@ -21,8 +21,7 @@ namespace UnitTestBowling
         public void Load()
         {
             ReadFileMock fileRead = new ReadFileMock("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,");
-            Frames frames = new Frames(10);
-            frames = LoadService.Load(frames, "C:\\data.txt", fileRead);
+            Frames frames = LoadService.Load("C:\\data.txt", fileRead);
 
             Frames evidence = RollMany(10, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1);
             Assert.AreEqual(frames, evidence);

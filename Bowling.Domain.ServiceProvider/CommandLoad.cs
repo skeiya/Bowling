@@ -18,7 +18,7 @@ namespace Bowling.Domain.ServiceProvider
 
         public void Exec()
         {
-            Frames frames = LoadService.Load(new Frames(FrameCountRule.GetCount()), _path, _readFile);
+            Frames frames = LoadService.Load(_path, _readFile);
             _player.SetFrames(frames);
             ScoreDrawer.Draw(frames);
         }
