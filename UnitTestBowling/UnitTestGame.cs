@@ -11,7 +11,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void OneRoll()
         {
-            Game game = new Game();
+            Player game = new Player();
             game.Roll(2);
             Assert.AreEqual(new Score(2), game.CalcScore());
         }
@@ -19,7 +19,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void TwoRoll()
         {
-            Game game = new Game();
+            Player game = new Player();
             game.Roll(2);
             game.Roll(3);
             Assert.AreEqual(new Score(5), game.CalcScore());
@@ -28,7 +28,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void Spare()
         {
-            Game game = new Game();
+            Player game = new Player();
             game.Roll(2);
             game.Roll(8);
             game.Roll(2);
@@ -39,7 +39,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void Strike()
         {
-            Game game = new Game();
+            Player game = new Player();
             game.Roll(10);
             game.Roll(8);
             game.Roll(1);
@@ -50,7 +50,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void Perfect()
         {
-            Game game = new Game();
+            Player game = new Player();
             for (int i = 0; i < 12; i++) game.Roll(10);
             Assert.AreEqual(new Score(300), game.CalcScore());
         }
@@ -60,7 +60,7 @@ namespace UnitTestBowling
         [ExpectedException(typeof(Exception))]
         public void ErrorOneRoll()
         {
-            Game game = new Game();
+            Player game = new Player();
             game.Roll(-1);
         }
 
@@ -68,7 +68,7 @@ namespace UnitTestBowling
         [ExpectedException(typeof(Exception))]
         public void ErrorFrameOver()
         {
-            Game game = new Game();
+            Player game = new Player();
             game.Roll(2);
             game.Roll(9);
         }

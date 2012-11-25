@@ -21,7 +21,7 @@ namespace UnitTestBowling
             Assert.AreEqual("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,", writeFile.GetContent());
         }
 
-        private void RollMany(Game game, params int[] pins)
+        private void RollMany(Player game, params int[] pins)
         {
             foreach (int pin in pins) game.Roll(pin);
         }
@@ -35,9 +35,9 @@ namespace UnitTestBowling
             Game game = new Game(ui, null, fileRead);
             game.Start();
 
-            Game evidence = new Game();
+            Player evidence = new Player();
             RollMany(evidence, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1);
-            Assert.AreEqual(game, evidence);
+            Assert.AreEqual(game.GetPlayer(), evidence);
         }
     }
 }

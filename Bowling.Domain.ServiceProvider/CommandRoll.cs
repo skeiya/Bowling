@@ -3,10 +3,10 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class CommandRoll : ICommand
     {
-        private Game _game;
+        private Player _game;
         private int _pin;
 
-        public CommandRoll(Game game, int pin)
+        public CommandRoll(Player game, int pin)
         {
             _game = game;
             _pin = pin;

@@ -1,38 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bowling.Domain.Model;
-using Bowling.Domain.Spec;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bowling.Domain.ServiceProvider;
 
 namespace Bowling.Domain.ServiceProvider
 {
     public class Game
     {
-        private Frames _frames = new Frames(FrameCountRule.GetCount());
-        private IUserInterface _ui;
+        private IUserInterface _userInterface;
         private IWriteFile _writeFile;
         private IReadFile _readFile;
 
-        /// <summary>
-        /// For test only
-        /// </summary>
-        public Game()
-        {
-        }
+        private Player _player;
 
-        public Game(IUserInterface ui, IWriteFile writeFile, IReadFile readFile)
+        public Game(IUserInterface userInterface, IWriteFile writeFile, IReadFile readFile)
         {
-            _ui = ui;
-            _writeFile = writeFile;
-            _readFile = readFile;
+            this._userInterface = userInterface;
+            this._writeFile = writeFile;
+            this._readFile = readFile;
+
+            _player = new Player(_userInterface, _writeFile, _readFile);
         }
 
         public void Start()
         {
-            while (!IsEnd())
+            while (!_player.IsEnd())
             {
                 try
                 {
-                    ICommand c = CommandFactory.CraeteFromUserInput(_ui, _readFile, _writeFile, this);
+                    ICommand c = CommandFactory.CraeteFromUserInput(_userInterface, _readFile, _writeFile, _player);
                     c.Exec();
                     if (c.GetType() == typeof(CommandQuit)) return;
                 }
@@ -43,46 +41,9 @@ namespace Bowling.Domain.ServiceProvider
             Console.ReadKey();
         }
 
-        public void Roll(int p)
+        public Player GetPlayer()
         {
-            _frames = RollService.Roll(_frames, p);
-        }
-
-        public Score CalcScore()
-        {
-            return ScoreService.Calc(_frames);
-        }
-
-        public bool IsEnd()
-        {
-            return RollService.IsEnd(_frames);
-        }
-
-        public void Load(string path)
-        {
-            _frames = LoadService.Load(new Frames(FrameCountRule.GetCount()), path, _readFile);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null) return false;
-            if (GetType() != obj.GetType()) return false;
-            return this._frames.Equals(((Game)obj)._frames);
-        }
-
-        public override int GetHashCode()
-        {
-            return _frames.GetHashCode();
-        }
-
-        internal Frames GetFrames()
-        {
-            return _frames;
-        }
-
-        internal void SetFrames(Frames frames)
-        {
-            _frames = frames;
+            return _player;
         }
     }
 }

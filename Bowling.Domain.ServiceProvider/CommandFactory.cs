@@ -5,7 +5,7 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class CommandFactory
     {
-        public static ICommand CraeteFromUserInput(IUserInterface ui, IReadFile readFile, IWriteFile writeFile, Game game)
+        public static ICommand CraeteFromUserInput(IUserInterface ui, IReadFile readFile, IWriteFile writeFile, Player game)
         {
             while (true)
             {

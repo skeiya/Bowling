@@ -45,6 +45,7 @@
     <Compile Include="CommandRoll.cs" />
     <Compile Include="CommandSave.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="IReadFile.cs" />
     <Compile Include="IUserInterface.cs" />

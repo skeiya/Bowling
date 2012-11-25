@@ -11,7 +11,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void CreateCommandRoll()
         {
-            Game game = new Game();
+            Player game = new Player();
             IUserInterface ui = new UserInterfaceMock("3");
             ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, game);
             Assert.IsInstanceOfType(c, typeof(CommandRoll));
@@ -20,7 +20,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void CreateCommandSave()
         {
-            Game game = new Game();
+            Player game = new Player();
             IUserInterface ui = new UserInterfaceMock("s:C:\\work\\data.txt");
             ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, game);
             Assert.IsInstanceOfType(c, typeof(CommandSave));
@@ -29,7 +29,7 @@ namespace UnitTestBowling
         [TestMethod]
         public void CreateCommandLoad()
         {
-            Game game = new Game();
+            Player game = new Player();
             IUserInterface ui = new UserInterfaceMock("l:C:\\work\\data.txt");
             ICommand c = CommandFactory.CraeteFromUserInput(ui, null, null, game);
             Assert.IsInstanceOfType(c, typeof(CommandLoad));

@@ -5,11 +5,11 @@ namespace Bowling.Domain.ServiceProvider
 {
     public class CommandLoad : ICommand
     {
-        private Game _game;
+        private Player _game;
         private string _path;
         private IReadFile _readFile;
 
-        public CommandLoad(Game game, string p, IReadFile readFile)
+        public CommandLoad(Player game, string p, IReadFile readFile)
         {
             this._game = game;
             this._path = p;
