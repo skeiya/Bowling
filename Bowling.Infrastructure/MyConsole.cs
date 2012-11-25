@@ -5,12 +5,12 @@ namespace Bowling.Infrastructure
 {
     public class MyConsole : IMyConsole
     {
-        public void RequestInput()
+        public void WriteLine(string p)
         {
-            Console.WriteLine("Please input integer (from 0 to 10). When save, s:C:\\work\\data.txt. When load, l:C:\\work\\data.txt");
+            Console.WriteLine(p);
         }
 
-        public string AcceptInput()
+        public string ReadLine()
         {
             return Console.ReadLine();
         }

@@ -3,7 +3,7 @@ using System.Text;
 using Bowling.Domain.Model;
 using Bowling.Domain.Spec;
 
-namespace Bowling.Domain.ServiceProvider
+namespace Bowling.Presentation
 {
     public class RollFormatter
     {

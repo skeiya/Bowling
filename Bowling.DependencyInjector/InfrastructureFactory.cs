@@ -8,7 +8,7 @@ using Bowling.Infrastructure;
 
 namespace Bowling.DependencyInjector
 {
-    public class Injector
+    public class InfrastructureFactory
     {
         public static IMyConsole CreateUserInterface()
         {

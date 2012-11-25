@@ -7,7 +7,10 @@ namespace Bowling.Execution
     {
         static void Main(string[] args)
         {
-            Game game = new Game(Injector.CreateUserInterface(), Injector.CreateWriteFile(), Injector.CreateReadFile());
+            Game game = new Game(
+                PresentationFactory.CreateUserInterface(), 
+                InfrastructureFactory.CreateWriteFile(), 
+                InfrastructureFactory.CreateReadFile());
             game.Start();
         }
     }

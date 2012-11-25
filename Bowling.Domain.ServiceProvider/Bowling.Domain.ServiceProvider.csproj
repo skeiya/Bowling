@@ -39,24 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandFactory.cs" />
-    <Compile Include="CommandLoad.cs" />
-    <Compile Include="CommandQuit.cs" />
-    <Compile Include="CommandRoll.cs" />
-    <Compile Include="CommandSave.cs" />
+    <Compile Include="CallBack.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="IUserInterface.cs" />
+    <Compile Include="IUserInterfaceCallBack.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="ICommand.cs" />
     <Compile Include="IReadFile.cs" />
     <Compile Include="IMyConsole.cs" />
     <Compile Include="IWriteFile.cs" />
     <Compile Include="LoadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemainCalculator.cs" />
-    <Compile Include="RollFormatter.cs" />
     <Compile Include="RollService.cs" />
     <Compile Include="SaveService.cs" />
-    <Compile Include="ScoreDrawer.cs" />
     <Compile Include="ScoreService.cs" />
   </ItemGroup>
   <ItemGroup>

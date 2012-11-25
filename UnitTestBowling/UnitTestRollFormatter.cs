@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Bowling.Domain.Model;
 using Bowling.Domain.Spec;
-using Bowling.Domain.ServiceProvider;
+using Bowling.Presentation;
 
 namespace UnitTestBowling
 {
