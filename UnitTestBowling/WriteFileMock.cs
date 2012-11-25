@@ -4,13 +4,7 @@ namespace UnitTestBowling
 {
     class WriteFileMock : IWriteFile
     {
-        string _path;
         string _content = "";
-
-        internal string GetPath()
-        {
-            return _path;
-        }
 
         internal string GetContent()
         {
@@ -19,7 +13,7 @@ namespace UnitTestBowling
 
         public void Open(string path)
         {
-            _path = path;
+            // do nothing
         }
 
         public void Close()

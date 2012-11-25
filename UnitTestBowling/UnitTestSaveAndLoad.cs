@@ -1,4 +1,5 @@
-﻿using Bowling.Domain.ServiceProvider;
+﻿using Bowling.Domain.Model;
+using Bowling.Domain.ServiceProvider;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestBowling
@@ -9,35 +10,33 @@ namespace UnitTestBowling
         [TestMethod]
         public void Save()
         {
+            int[] pins = { 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1 };
+            Frames frames = RollMany(10, pins);
             WriteFileMock writeFile = new WriteFileMock();
-            UserInterfaceMock ui = new UserInterfaceMock();
-            ui.AddContent("0", "1", "1", "1", "2", "1", "3", "1", "4", "1", "5", "1", "6", "1", "7", "1", "8", "1", "9", "1");
-            ui.AddContent("s:C:\\data.txt");
-            ui.AddContent("q");
-
-            Game game = new Game(ui, writeFile, null);
-            game.Start();
-
+            SaveService.Save(frames, "C:\\data.txt", writeFile);
             Assert.AreEqual("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,", writeFile.GetContent());
-        }
-
-        private void RollMany(Player game, params int[] pins)
-        {
-            foreach (int pin in pins) game.Roll(pin);
         }
 
         [TestMethod]
         public void Load()
         {
             ReadFileMock fileRead = new ReadFileMock("0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,");
-            UserInterfaceMock ui = new UserInterfaceMock("l:C:\\data.txt");
-            ui.AddContent("q");
-            Game game = new Game(ui, null, fileRead);
-            game.Start();
+            Frames frames = new Frames(10);
+            frames = LoadService.Load(frames, "C:\\data.txt", fileRead);
 
-            Player evidence = new Player();
-            RollMany(evidence, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1);
-            Assert.AreEqual(game.GetPlayer(), evidence);
+            Frames evidence = RollMany(10, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1);
+            Assert.AreEqual(frames, evidence);
         }
+
+        private Frames RollMany(int maxFrameCount, params int[] pins)
+        {
+            Frames frames = new Frames(maxFrameCount);
+            foreach (int pin in pins)
+            {
+                frames = RollService.Roll(frames, pin);
+            }
+            return frames;
+        }
+
     }
 }
