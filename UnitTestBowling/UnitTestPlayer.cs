@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestBowling
 {
     [TestClass]
-    public class UnitTestGame
+    public class UnitTestPlayer
     {
         [TestMethod]
         public void OneRoll()
